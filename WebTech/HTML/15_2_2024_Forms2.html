@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label> Name: <sup>*</sup> </label>
+        <input type="text" name="Fname" placeholder="first Name" required>
+        <input type="text"  placeholder="Middle Name">
+        <input type="text" name="Lname" placeholder="Last Name">
+        <br><br>
+        
+        <label> Email:</label>
+        <input type="email" name="mail" placeholder="Enter Email Address">
+
+        <lable>Password:</lable>
+        <input type="text" name="pswd" placeholder="Enter Your password">
+
+        <label>Age: </label>
+        <input type="number" name="age" placeholder="Enter Age: " min="1" max="99">
+
+        <br><br>
+
+        <label>Date of Birth: </label>
+        <input type="date" name="dob" min="2018-01-01" max="2030-12-31">
+
+        <br><br>
+
+        <label>Time: </label>
+        <input type="time" name="time"></input>
+        
+        
+        <br><br>
+
+        <label>price Range:</label>
+        <input type="range" name="range">
+
+        <br><br>
+
+        <label>Profile Image: </label>
+        <input type="file"  name="file">
+
+        <br><br>
+        <label>Favourite Color: </label>
+        <input type="color">
+
+        <br><br>
+
+        <label>Gender : </label>
+        <label>Male </label>
+        <input type="radio" name="male" >
+        <label>female</label>
+        <input type="radio" name="female" >
+        <label>Others</label>
+        <input type="radio" name="others">
+        <br>
+        <label>Gender : </label>
+        <label>Male </label>
+        <input type="radio" name="gender" value="male">
+        <label>female</label>
+        <input type="radio" name="gender" value="female">
+        <label>Others</label>
+        <input type="radio" name="gender" value="other">
+
+        <br>
+        <label>Gender : </label>
+
+        <label for="m">Male</label>
+        <input type="radio" name="gender" value="male" id="m">
+
+        <label for="f">Female</label>
+        <input type="radio" name="gender" value="female" id="f">
+
+        <label for="o">Others</label>
+        <input type="radio" name="gender" value="other" id = "o">
+        <br>
+        <label>Gender : </label>
+        <label for="m">Male</label>
+        <input type="radio" name="gender" value="male" id="m" checked>
+
+        <label for="f">Female</label>
+        <input type="radio" name="gender" value="female" id="f">
+
+        <label for="o">Others</label>
+        <input type="radio" name="gender" value="other" id = "o" disabled>
+        
+        <br><br><br>
+        <label>Lanuages: </label>
+        <label>English</label>
+        <input type="checkbox" name="lang" value="eng">
+
+        <label>Odia</label>
+        <input type="checkbox" name="lang" value="Odia">
+
+        <label>Hindi</label>
+        <input type="checkbox" name="lang" value="hindi">
+
+        <br>
+        <label>Lanuages: </label>
+        <label>English</label>
+        <input type="checkbox" name="lang" value="eng">
+
+        <label>Odia</label>
+        <input type="checkbox" name="lang" value="Odia" checked>
+
+        <label>Hindi</label>
+        <input type="checkbox" name="lang" value="hindi" disabled>
+
+        <br><br><br><br><br>
+
+        <label>Places to go : </label>
+        <select name="plc" id="">
+            <option>Banglore</option>
+            <option>Mysore</option>
+            <option selected>Lakshyadeep</option>
+            <option disabled> Maldives</option>
+            <option>Manali</option>
+            <option>KuluValley</option>
+            <option>Puri</option>
+            <option>Badrinath</option>
+            <option>Kedarnath</option>
+            <option>Rameswaram</option>
+        </select>
+        <br>
+        
+        <label>Places to go : </label>
+        <select name="plc" id="">
+            <option value="bang">Banglore</option>
+            <option value="mys">Mysore</option>
+            <option value="laksha" selected>Lakshyadeep</option>
+            <option disabled> Maldives</option>
+            <option>Manali</option>
+            <option>KuluValley</option>
+            <option>Puri</option>
+            <option>Badrinath</option>
+            <option>Kedarnath</option>
+            <option>Rameswaram</option>
+        </select>
+        <br><br><br>
+
+        <label>Comment: </label>
+        <br><br>
+        <textarea name="comment_box" id="" cols="50" rows="5"></textarea>
+        
+        <br><br>
+        <input type="submit" value="Register">
+        <input type="reset">
+    </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <form  method="post" action="basic.html">
+
+        <fieldset>
+        <legend align="center">Login Details</legend>
+        <label> Name: <sup>*</sup> </label>
+        <input type="text" name="Fname" placeholder="first Name" required>
+        <input type="text"  placeholder="Middle Name">
+        <input type="text" name="Lname" placeholder="Last Name">
+        <br><br>
+        
+        <label> Email:</label>
+        <input type="email" name="mail" placeholder="Enter Email Address">
+        
+        <lable>Password:</lable>
+        <input type="text" name="pswd" placeholder="Enter Your password">
+        
+        <label>Age: </label>
+        <input type="number" name="age" placeholder="Enter Age: " min="1" max="99">
+        
+        <br><br>
+
+        <label>Date of Birth: </label>
+        <input type="date" name="dob" min="2018-01-01" max="2030-12-31">
+
+        <br><br>
+
+        <label>Time: </label>
+        <input type="time" name="time"></input>
+        
+        
+        <br><br>
+
+        <label>price Range:</label>
+        <input type="range" name="range">
+
+        <br><br>
+
+        <label>Profile Image: </label>
+        <input type="file"  name="file">
+
+        <br><br>
+        <label>Favourite Color: </label>
+        <input type="color">
+
+        <br><br>
+        <input type="submit" value="Register">
+        <input type="reset">
+    </fieldset>
+    </form>
+</body>
+</html>
+
+<!-- 
+    difference between radio & checkbox :- 
+
+        -> radio button is used to select single option & checkbox is used to select multiple option.
+
+        -> checked attribute is used to select default option in radio or checkbox field.
+
+        -> disabled attribute is used to make disable condition for input field.
+        (when  we are using disable attribute we can't do any operation or we can't select the option on that input field)
+
+    creation of dropdown in webpage:-
+        -> <select> tag is used to create the dropdown.
+        
+        -> <option> tag is used to insert the option on the dropdown
+            Note:   Both <select> & <option> tags are paired tags 
+                Syntax:
+                    <select>
+                        <option>.....</option>
+                        <option>.....</option>
+                        <option>.....</option>
+                        .......
+
+                    </select>
+
+    Tags present in from to group the HTML Elements:
+        -> <fieldset> tag is used to group the related information of the input field on webpage.
+            -> <fieldset> tag is paired tag & block level tag.
+            
+        -> <legend> tag is used to give the name for the fieldset
+            -> <legend> tag is paired tag & inline level tag.
+
+    Attributes present in Form Tag:
+        -> Method attribute is used to send the data to the backend by using get & post type.
+            
+        -> When we are using method="get" we can send the data to the backend but Data is visible in the URL, to hide the data we are using method="post".
+           
+        -> action attribute is used to write configured URL.
+ -->

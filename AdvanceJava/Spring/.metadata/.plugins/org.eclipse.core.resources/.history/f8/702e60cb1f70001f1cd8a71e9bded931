@@ -1,0 +1,9 @@
+package springintro2;
+
+import org.springframework.core.io.ClassPathResource;
+
+public class Test {
+	public static void main(String[] args) {
+		Resource r = new ClassPathResource("config.xml");
+	}
+}

@@ -1,0 +1,29 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+.parent {
+  height: 100vh;
+  width: 100%;
+  /* width: fit-content; */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.main {
+  /* height: 400px;
+  width: 500px; */
+  width: 400px;
+}
+
+img {
+  height: 300px;
+  width: 400px;
+  /* height: 300px;
+  hei
+  width: 200px; */
+}
+.main .info p {
+  text-align: justify;
+}

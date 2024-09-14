@@ -1,0 +1,43 @@
+class Employee5
+       {
+	static String mgr;
+	String name;
+	int id;
+	long phone;
+	int salary;
+       }
+	public void m1()
+	{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter your MGR Name :");
+	mgr=sc.next();
+	System.out.println("Enter your Name :");
+        name=sc.next();
+	System.out.println("Enter your Id :");
+	id=sc.nextInt();
+	System.out.println("Enter your Phone :");
+	phone=sc.nextLong();
+	System.out.println("Enter your Salary :");
+	int=sc.nextInt();
+	}
+	public void Display()
+	{
+	System.out.println("Enter your MGR Name :"+mgr);
+	System.out.println("Enter your Name :"+name);
+	System.out.println("Enter your ID:"+id);
+	System.out.println("Enter your Phone :"+phone);
+	System.out.println("Enter your Salary :"+salary);
+	}
+	class EmployeeMain12
+	{
+	public static void main(String[] args)
+	{
+	Employee0 e=new Employee();
+	System.out.println("Enter your Details :");
+	m1();
+	Display();
+	
+	}
+	}
+
+	

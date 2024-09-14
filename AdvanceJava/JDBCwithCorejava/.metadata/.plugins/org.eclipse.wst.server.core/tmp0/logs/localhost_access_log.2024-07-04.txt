@@ -1,0 +1,8 @@
+127.0.0.1 - - [04/Jul/2024:01:39:45 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [04/Jul/2024:01:39:45 +0530] "GET /somit/WEB-INF/classes/Smith.java HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [04/Jul/2024:01:39:45 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+127.0.0.1 - - [04/Jul/2024:01:47:09 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [04/Jul/2024:01:47:10 +0530] "GET /Das/WEB-INF/classes/HelloWorld.java HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [04/Jul/2024:01:47:32 +0530] "GET /Das/WEB-INF/classes/HelloWorld.java HTTP/1.1" 404 683
+127.0.0.1 - - [04/Jul/2024:01:50:20 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [04/Jul/2024:01:50:20 +0530] "GET /Das/WEB-INF/classes/Hello.java HTTP/1.1" 404 683

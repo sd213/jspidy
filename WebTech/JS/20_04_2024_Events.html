@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo on Events</title>
+    <style>
+        .triple{
+            display: block;
+            /* margin:10px auto; */
+            /* height:5vh; */
+            /* width:30%; */
+        }
+        input{
+            
+            display: block;
+            width: 1000px;
+            margin: 10px auto;
+            padding:30px;
+            font-size: 18px;
+            
+            border:solid 1px rgba(26, 14, 14, 0.138);
+        }
+        input::placeholder{
+        }
+        button{
+            padding: 10px 20px;
+        }
+        input[type=submit]{
+            width:500px;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Demo on Events</h1>
+    <button onclick='console.log("hi")'>
+        Click Here
+    </button>
+    <br>
+
+    <button onclick="fun()"> 
+        print Name
+    </button>
+    <script src="./20_04_2024_Events.js"></script>
+
+    <h3>on Double Click Event</h3>
+    <button ondblclick="doubleClick()"> double Click</button>
+    <br>
+
+    <h3>on Triple Clicking</h3>
+    <button onclick="singleClick()" ondblclick="doubleClick()" class="triple"> <img src="./Images/yelloClickHere.jpg" alt=""></button>
+
+    <h2>Keyboard Events</h2>
+    <form action="">
+        <input type="text" onkeydown="key1()" placeholder="onkeydown">
+        <input type="text" onkeypress="key2()" placeholder="onkeypress">
+        <input type="text" onkeyup="key3()" placeholder="onkeyup">
+    </form>
+    
+
+    <h2>Mouse Events</h2>
+    <h3>on Mouse Over</h3>
+    <img src="./Images/sam-moghadam-khamseh-yxZSAjyToP4-unsplash.jpg" height="200" onmouseover="chilmood()" alt="">
+
+
+    <h2>Form Events</h2>
+    <h3>on Submit Events</h3>
+    <form action="" onsubmit="handleSubmit1()">
+        <input type="text" placeholder="Enter your First Name: ">
+        <input type="text" placeholder="Enter your Last Name: ">
+        <input type="submit" value="Submit">
+    </form>
+    <form action="" onsubmit="handleSubmit2()">
+        <input type="text" placeholder="Enter your fATHER 'S First Name: ">
+        <input type="text" placeholder="Enter your FATHER'S Last Name: ">
+        <input type="submit" value="Submit">
+    </form>
+    <form action="" onsubmit="handleSubmit3(event)">
+        <input type="text" placeholder="Enter your MOTHER'S First Name: ">
+        <input type="text" placeholder="Enter your MOTHER'S Last Name: ">
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="" onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Enter your pet'S First Name: ">
+        <input type="text" placeholder="Enter your pet'S Last Name: ">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+
+    <h2>Calculator</h2>
+    <form action="" onsubmit="Calculation(event)">
+        <label for="">Enter First Number</label>
+        <input type="text" placeholder="First Number: ">
+        <br>
+        <label for="">Enter Operator</label>
+        <input type="text" placeholder="Operator: ">
+        <br>
+        <label for="">Enter Second Number</label>
+        <input type="text" placeholder="Second Number : ">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+<!-- Events list
+    onClick()
+    ondblClick
+    onload
+    onSubmit
+    onCopy
+    onPaste
+    onDrag
+    onDrop
+    onKey
+    onMouse    
+-->

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2Keywords Variables</title>
+</head>
+<body>
+    <h1>Keywords & Variables</h1>
+    <script src="./13_3_2024_KeywordsAndVariables.js"></script>
+</body>
+</html>
+<!--
+
+    KeyWord:-
+        -> This are the pre-defined words whose meaning will known to JS engine.
+        -> all keywords are written in lowercase
+        -> Ex:- if , else , continue ,break etc.
+        -> In JS mainly considered with 3 declaration keywords to store the data in variable that is var,let & const.
+            var     - basic keyword using from version ES-1
+            let & const - keyword using from version ES-6
+
+    var Keyword:-
+        -> In var keyword all cases are possible -> (declaration,Initialization,re-Initialization & re-declaration)
+
+        ex:-
+                var a ; //declaration
+                a = 10; // Initialization
+                console.log(a);
+
+                a = 'Hai'  // re-Initialization
+             
+                console.log(a);
+
+                var a; //re-declaration
+          
+                console.log(a);
+    let Keyword:-
+        -> In  let keyword 3 cases are possible -> ( declaration,Initialization,re-Initialization)
+        -> re-declaration is not possible in let keyword.
+        
+        ex:-
+                let b ; //declaration
+                b = 20; //Initialization
+                console.log(b);
+
+                b = 'BAI';// re-initialization
+                console.log(b);
+
+                //let b ; // re-declaration not possible in let case.
+                b = false;
+                console.log(b);
+    
+    const Keyword:-
+        ->  In const keyword declaration & Initialization is possible but in same line (Ex :- const c = "hai")
+        ->  Both reinitialization and redeclaration are not possible in const keytword.
+
+        ex:-
+                //const c; // declaration and initialization not done in one line
+                //c =234;
+
+                const d1 = 43;
+
+                // d1=45;//Assignment to constant variable. , reassignatino not work with const
+                
+                console.log(d1);
+
+                // const d1 = 90; //Uncaught SyntaxError: Identifier 'd1' has already been declared  , redeclaration not allowed 
+
+  -->
+

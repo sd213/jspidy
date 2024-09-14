@@ -1,0 +1,29 @@
+@charset "UTF-8";
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	min-height:100vh;
+	display:flex;
+	
+	/* background-color:#f586bb; */
+	background-color: #b8d9fa;
+	flex-direction:column;
+	justify-content:center;
+	align-items: center;
+}
+form{
+	display:flex;
+	flex-direction:column;
+	
+}
+
+input{
+	padding:8px 10px;
+	border:solid 0.1px #aca4fb;
+	border-radius:5px;
+}
+input[type="submit"]{
+	margin-top:30px;
+}

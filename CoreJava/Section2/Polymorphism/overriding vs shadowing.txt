@@ -1,0 +1,85 @@
+1. Is override applied for non-static class but for static class method shadowing is applied?
+=============================================================================================
+
+In object-oriented programming, the concepts of method overriding and method shadowing (also referred to as hiding) pertain to how methods are defined and used in inheritance hierarchies. Let's clarify these concepts and their application to static and non-static methods.
+
+### Method Overriding
+
+**Method Overriding** is a feature that allows a subclass to provide a specific implementation for a method that is already defined in its superclass. The key points for method overriding are:
+
+- The method in the subclass must have the same name, return type, and parameters as the method in the superclass.
+- The method in the subclass should be marked with the `@Override` annotation (in languages like Java) to indicate that it is intentionally overriding a method in the superclass.
+- Method overriding is used for non-static methods. It allows dynamic (runtime) polymorphism, where the method that gets called is determined at runtime based on the object's actual type.
+
+### Method Shadowing (Hiding)
+
+**Method Shadowing** or **Hiding** occurs when a subclass defines a static method with the same name and parameters as a static method in its superclass. The key points for method shadowing are:
+
+- The method in the subclass must be static.
+- The method in the subclass hides the method in the superclass, rather than overriding it.
+- Method shadowing does not support dynamic polymorphism. Instead, the method that gets called is determined at compile time based on the reference type, not the object's actual type.
+
+### Practical Examples in Java
+
+#### Method Overriding Example (Non-static Methods):
+
+```java
+class SuperClass {
+    public void display() {
+        System.out.println("Display method of SuperClass");
+    }
+}
+
+class SubClass extends SuperClass {
+    @Override
+    public void display() {
+        System.out.println("Display method of SubClass");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        SuperClass obj = new SubClass();
+        obj.display(); // Outputs "Display method of SubClass"
+    }
+}
+```
+
+In this example, the `display` method in `SubClass` overrides the `display` method in `SuperClass`. When the `display` method is called on a `SuperClass` reference pointing to a `SubClass` object, the overridden method in `SubClass` is executed.
+
+#### Method Shadowing Example (Static Methods):
+
+```java
+class SuperClass {
+    public static void display() {
+        System.out.println("Static display method of SuperClass");
+    }
+}
+
+class SubClass extends SuperClass {
+    public static void display() {
+        System.out.println("Static display method of SubClass");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        SuperClass obj = new SubClass();
+        obj.display(); // Outputs "Static display method of SuperClass"
+        
+        SubClass.display(); // Outputs "Static display method of SubClass"
+    }
+}
+```
+
+In this example, the `display` method in `SubClass` hides the static `display` method in `SuperClass`. When the `display` method is called on a `SuperClass` reference, the method in `SuperClass` is executed, regardless of the actual object type. However, calling `SubClass.display()` directly will invoke the method in `SubClass`.
+
+### Summary
+
+- **Non-static methods**: Use method overriding to achieve runtime polymorphism.
+- **Static methods**: Use method shadowing/hiding, as static methods cannot be overridden.
+
+By understanding these principles, you can effectively design class hierarchies and manage method behavior in object-oriented programming.
+
+2.
+====================================================================

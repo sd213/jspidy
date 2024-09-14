@@ -1,0 +1,53 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    background-color: #faf3f7;
+}
+.home a{
+    text-decoration: none;
+}
+
+.home .section2{
+    height: 30vh;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home .section2 p{
+    
+    font-size: 20px;
+    text-align: center;
+    width: 400px;
+}
+.home .section2 p:first-child{
+    color:#f23d92;
+    font-weight: 600;
+}
+.home .section2 p:last-child{
+    color:#111111;
+    font-weight: bold;
+    -webkit-text-stroke: 0.3px;
+    font-weight: 300;
+    font-size: 14px;
+    width: 150px;
+}
+.home .sectionbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.home .sectionbox button{
+    height: 40px;
+    align-self: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #f586bb;
+    border: solid 1px #c74300;
+    border-radius: 20px;
+
+}
+.home .sectionbox button a{
+    color: white;
+}

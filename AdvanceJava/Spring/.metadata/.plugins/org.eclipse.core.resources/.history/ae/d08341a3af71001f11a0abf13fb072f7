@@ -1,0 +1,15 @@
+package fifth;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class Runner {
+	public static void main(String[] args) {
+		System.out.println("Start");
+		Resource res = new ClassPathResource("configuration.xml");
+		BeanFactory fact = new XmlBeanFactory(res);
+		System.out.println(fact.getBean("m"));
+	}
+}

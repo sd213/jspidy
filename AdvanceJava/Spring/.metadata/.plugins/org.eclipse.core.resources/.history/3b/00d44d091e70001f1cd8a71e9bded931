@@ -1,0 +1,7 @@
+package springintro2;
+
+public class Developer {
+
+	Computer c = new Desktop();
+	
+}

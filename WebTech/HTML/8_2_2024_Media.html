@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Tags</title>
+  </head>
+  <body>
+    <h1>Media Tags</h1>
+    <h3>Insertion of Images</h3>
+    <img
+      src="C:\Users\somit\Pictures\Puri-Jagannath-Dev-Image.jpg"
+      alt=""
+      height="200px"
+      width="200px"
+    />
+    <img
+      src="C:\Users\somit\Pictures\Puri-Jagannath-Dev-Image.jpg"
+      alt=""
+      height="200px"
+    />
+    <img
+      src="C:\Users\somit\Pictures\Puri-Jagannath-Dev-Image.jpg"
+      alt=""
+      width="200px"
+      alt="Path is Wrong"
+    />
+
+    <img src="./Images/Puri-Jagannath-Dev-Image.jpg" alt="" />
+
+    <h1>Insertion of Video</h1>
+    <video
+      src="./Videos/001 Prime Number Test.mp4"
+      height="300px"
+      controls
+    ></video>
+
+    <audio src="./Audio/greatgatsby4_00_fitzgerald_64kb.mp3" controls></audio>
+
+    <h3>Insertion of Images</h3>
+
+    <picture>
+      <figcaption>JaY Sri Krishna</figcaption>
+      <img src="./Images/download.jpeg" alt="" height="250px" />
+      <img src="./Images/images.jpeg" alt="" height="250px" />
+    </picture>
+
+    <h3>Insertion of Video</h3>
+    <video controls height="300px">
+      <source src="./Videos/002 Prime Number_ Test - Implementation.mp4" />
+      <source src="./Videos/003 Prime Factorization.mp4" />
+      <source src="./Videos/004 Prime Factorization - Implementation.mp4" />
+    </video>
+
+    <h3>Insertion of Audio</h3>
+    <audio controls>
+      <source src="./Audio/greatgatsby4_00_fitzgerald_64kb.mp3" />
+    </audio>
+
+    <h3>GIf Animation using Marque</h3>
+    <marquee behavior="" direction="">
+      <img src="./Images/jarvis-tony-stark.gif" alt="" />
+    </marquee>
+    <marquee behavior="" direction="right">
+      <img src="./Images/cat.gif" alt="" />
+    </marquee>
+    <marquee behavior="" direction="">
+      <img src="./Images/dance.gif" alt="" />
+    </marquee>
+    <marquee behavior="" direction="">
+      <img src="./Images/funny-animals-running.gif" alt="" />
+    </marquee>
+    <marquee behavior="" direction="" scrollamount="30">
+      <img src="Images/run.gif" alt="" />
+    </marquee>
+    <marquee behavior="" direction="right">
+      <img src="Images/dancing-bear.gif" alt="" />
+    </marquee>
+
+    <marquee behavior="" direction="">
+      <img src="./Images/dance.gif" alt="" srcset="" />
+      <img src="Images/dancing-bear.gif" alt="" />
+    </marquee>
+
+    <marquee behavior="alternate" direction="right" scrollamount="80">
+      <img src="Images/cat.gif" alt="" />
+    </marquee>
+
+    <marquee
+      behavior="slide"
+      direction="right"
+      scrollamount="80"
+      width="1024px"
+    >
+      <img src="Images/cat.gif" alt="" />
+    </marquee>
+  </body>
+</html>
+
+<!-- 
+
+
+    Media Tags : - Images , videos , Audios 
+-------------------------------------------------------------------
+
+
+   
+
+
+    (a)-> Insertion Of Images:-
+            -> <img> tag used to insert the image
+                -> It is unpaired tag and inline level element-
+    
+    (b)-> Insertion of Videos:- 
+            -> <video> tag used to insert video
+                -> It is a paired tag and inline level element.
+    
+    (c)-> Insertion of Audio:-
+            -> <audio> tag used to insert audio.
+                    -> It is paired tag & Inline level element.
+
+
+
+ 
+    Attributes:
+        -> src attributes is used to insert the path of media files.
+
+        -> alt attributes is used to display the alternate message or error message1. It will be displayed  when there is some  issues  in path or networkc condition.
+
+        -> height & width attributes is used to set the length or size of the media files .
+
+        -> controls attributes is used to control playlist of audio & video.
+
+ -->
+
+<!--  
+
+    Marque :
+        -> It used to scroll the context from one end to another end.
+        -> It is a block level element.
+
+    Attributes:
+        -> Direction attributes used to change the direction of marque tag.
+            ex:-    
+                    direction = "right" , direction="left"(default) , direction="up/down"
+
+        -> behavior attribute is used to change the behavior of marquee tag.
+            ex:-
+                    behavior = "side/alternate"
+        
+        -> scrollamount attribute is used to increase the speed of marquee tag.(scrolling contents)
+            ex:-    scrollamount = "numbers/speedvalue"
+
+
+
+-->

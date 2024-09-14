@@ -1,0 +1,66 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-class>org.jsp.demo3.First</servlet-class>
+  	<servlet-name>DemFirst</servlet-name>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DemFirst</servlet-name>
+  	<url-pattern>/DF</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-class>org.jsp.demo3.IsPrime</servlet-class>
+  	<servlet-name>ip</servlet-name>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ip</servlet-name>
+  	<url-pattern>/isprime</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-class>org.jsp.demo3.IsStrong</servlet-class>
+  	<servlet-name>is</servlet-name>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>is</servlet-name>
+  	<url-pattern>/isstrong</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-class>org.jsp.demo3.IsSpy</servlet-class>
+  	<servlet-name>ispy</servlet-name>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ispy</servlet-name>
+  	<url-pattern>/isspy</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+  	<servlet-class>org.jsp.demo3.IsTech</servlet-class>
+  	<servlet-name>it</servlet-name>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>it</servlet-name>
+  	<url-pattern>/it</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-class>loadandStartup.MyServlet1</servlet-class>
+  	<servlet-name>ms1</servlet-name>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ms1</servlet-name>
+  	<url-pattern>/a1</url-pattern>
+  </servlet-mapping>
+</web-app>

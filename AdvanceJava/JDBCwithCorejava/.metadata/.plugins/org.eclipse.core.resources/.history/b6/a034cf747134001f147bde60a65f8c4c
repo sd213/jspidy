@@ -1,0 +1,24 @@
+////WAJPT store height and weight of student inside a LInkedlIst and sort in desc order and print using iterator.
+package com.section3.tasks.q4;
+
+import java.util.Collections;
+import java.util.LinkedList;
+
+public class Gym {
+
+	public static void main(String[] args) {
+		
+		LinkedList<Student> s = new LinkedList<Student>();
+		s.add(new Student("SD",2,5.5,65.3));
+		s.add(new Student("DS",9,4.5,75.3));
+		s.add(new Student("MOS",0,7.5,85.0));
+		s.add(new Student("JS",12,6.2,84.2));
+		s.add(new Student("Lax",8,6.5,79.9));
+		
+		//height based
+		Collections.sort(s,new SortingH());
+		System.out.println(s);
+		Collections.sort(s,new SortingW());
+	}
+
+}

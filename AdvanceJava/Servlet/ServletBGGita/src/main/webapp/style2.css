@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    padding:0px 20px;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(235, 235, 229, 0.7),rgba(187, 179, 179, 0.578)) ,url(Images/wp2765115-lord-krishna-and-arjuna-hd-wallpapers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-evenly; */
+}
+/* heading */
+.btname{
+    margin:20px 0px;
+    color: rgba(255, 98, 0, 0.571);
+    background-color: rgba(64, 44, 44, 0.581);
+    padding: 8px 16px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.btname::before{
+    content: " ";
+    display: block;
+    width: 124px;
+    background-color: orange;
+    height: 10px;
+}
+.btname::after{
+    content: " ";
+    display: block;
+    width: 63px;
+    align-self: flex-end;
+    background-color: rgba(255, 166, 0, 0.832);
+    height: 10px;
+    
+}
+.btns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom:40px;
+ 
+
+}
+.btns button{
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: bisque;
+    border: none;
+}
+.btns h3{
+	color:rgb(55, 0, 128);
+	background-color: orange;
+}

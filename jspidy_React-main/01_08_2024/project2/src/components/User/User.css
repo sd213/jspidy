@@ -1,0 +1,21 @@
+.header{
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(to right top, #6bacd1, #6faae0, #80a7ec, #9ba0f3, #bb97f2, #d78ee5, #ee86d3, #ff80be, #ff82a2, #ff8b87, #ff9970, #fba95f);
+    position: sticky;
+    top:0;
+    left: 0;
+    
+
+}
+.header ul{
+    height: 100%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.header ul li a{
+    text-decoration: none;
+}

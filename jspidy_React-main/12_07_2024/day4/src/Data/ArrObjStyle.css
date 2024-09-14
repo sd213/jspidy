@@ -1,0 +1,29 @@
+.greet {
+  height: 90px;
+  color: rgb(119, 212, 142);
+  background-image: linear-gradient(
+    135deg,
+    rgb(225, 126, 126),
+    rgb(124, 116, 236)
+  );
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 5px 5px 5px black;
+}
+.parent {
+  /* height: 500px; */
+  padding: 40px;
+  border: solid rgb(23, 15, 15) 1px;
+  background-color: rgb(232, 136, 136);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.child {
+  padding: 30px;
+  background-color: cadetblue;
+  border: dotted 3px black;
+  border-radius: 15px;
+}

@@ -1,0 +1,22 @@
+class Employee0
+       {
+	static String mgr;
+	int name;
+	int id;
+	long phone;
+	int salary;
+       }
+	class EmployeeMain
+	{
+	public static void main(String[] args)
+	{
+	Employee0 e=new Employee();
+	Employee0.mgr="Srikanth";
+	e.name="rohit";
+	e.id=202;
+	e.phone=134567890l;
+	e.salary=50;
+	}
+	}
+
+	

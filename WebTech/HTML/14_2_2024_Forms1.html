@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Demo on Forms</h1>
+    
+    <form action="">
+        <label> Name: <sup>*</sup> </label>
+        <input type="text" name="Fname" placeholder="first Name" required>
+        <input type="text"  placeholder="Middle Name">
+        <input type="text" name="Lname" placeholder="Last Name">
+        <br><br>
+        
+        <label> Email:</label>
+        <input type="email" name="mail" placeholder="Enter Email Address">
+
+        <lable>Password:</lable>
+        <input type="text" name="pswd" placeholder="Enter Your password">
+
+        <label>Age: </label>
+        <input type="number" name="age" placeholder="Enter Age: " min="1" max="99">
+
+        <br><br>
+
+        <label>Date of Birth: </label>
+        <input type="date" name="dob" min="2018-01-01" max="2030-12-31">
+
+        <br><br>
+
+        <label>Time: </label>
+        <input type="time" name="time">
+        
+        
+        <br><br>
+
+        <label>price Range:</label>
+        <input type="range" name="range">
+
+        <br><br>
+
+        <label>Profile Image: </label>
+        <input type="file"  name="file">
+
+        <br><br>
+        <label>Favourite Color: </label>
+        <input type="color">
+
+        <br><br>
+        <input type="submit" value="Register">
+        <input type="reset">
+    </form>
+
+</body>
+</html>
+
+<!-- NOTES
+    --------------------
+
+
+    Form:   It is used to collect the data from the enduser directly from the webpage by  using the Input field
+
+    Tags:
+            -> <form> tag is used to create the form on the webpage
+                -> <form> tag is paired tag & block level tag.
+                    Note:   Without <form> tag we can't submit the data to backend 
+            -> <label> tag is used to give the label name for the input field
+                -> <label> tag is paired tag & inline level tag.
+
+            -> To create the input field on the webpage we are using <input> tag
+                -> <input> tag is a unpaired tag & inline level tag
+
+    Attributes Present in the input Field:
+        -> Type attribute is used to change the type of the input field.
+        -> name attribute is used to send the data to the backend.
+                Note:- Without using the name attribute we can't send the data to backend.
+
+        -> placeholder attribute is used to give reference message for the input field & name is present inside input field.
+
+        -> Required attribute is used to make a mandatory input field.
+        -> value attribute is used to change the value of input field.
+        -> min & max attribute is used to set minimum & maximum value for the input field.
+
+
+
+-->

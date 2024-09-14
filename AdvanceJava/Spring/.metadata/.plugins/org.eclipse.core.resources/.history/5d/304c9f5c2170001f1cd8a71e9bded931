@@ -1,0 +1,16 @@
+package springintro2;
+
+public class Desktop implements Computer {
+
+	
+	public void Desktop() {
+		System.out.println("HELLO DEVELOPER");
+	}
+	
+	@Override
+	public void compile() {
+		
+		System.out.println("Code Compiled in Desktop....");
+	}
+
+}

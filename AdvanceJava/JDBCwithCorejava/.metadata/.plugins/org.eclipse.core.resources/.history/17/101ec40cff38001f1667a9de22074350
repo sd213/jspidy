@@ -1,0 +1,9 @@
+package com.fileHandling;
+
+public class FileHandleCreate {
+
+	public static void main(String[] args) {
+		File f1 = new File("C:\\Windows\\somitdas.txt");
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.section3.tasks.q4;
+
+public class Student {
+	
+	private String name;
+	private Integer id;
+	private Double height;
+	private Double width;
+	public Student(String name, Integer id, Double height, Double width) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.height = height;
+		this.width = width;
+	}
+	public String toString() {
+		return "Name:- "+name+", Id:- "+id+", Height:- "+height+", Width:- "+width;
+		
+	}
+	
+
+}

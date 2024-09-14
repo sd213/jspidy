@@ -1,0 +1,18 @@
+package tasks;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class SecondStatement {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+class Connection{
+	Connection c;
+	Statement s;
+	
+	Connection()
+}

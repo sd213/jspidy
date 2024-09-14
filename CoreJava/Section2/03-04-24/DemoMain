@@ -1,0 +1,22 @@
+Demo
+{
+	Demo(){}
+	Demo(int y){}
+	Demo(double x){}
+	Demo(int x1,double y){}
+	Demo(double y,int x){}
+
+}
+class DemoMain
+{
+	public static void main(String[] args)
+	{
+	Demo d=new Demo();
+	Demo();
+	Demo(10);
+	Demo(50.67d);
+	Demo(76.17f);
+	Demo(10,12.2d);
+	Demo(100.4d,22);
+	}
+}

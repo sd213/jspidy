@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing Function 1</title>
+</head>
+<body>
+    <h1>timing Function 1</h1>
+
+    <h3>SetTimeout</h3>
+    <!-- <button onclick="setTimeout(fun,2000)">start</button> -->
+    <button onclick="a = setTimeout(startFunc,2000)">Start</button>
+    <h3>Clear Timeout</h3>
+    <button onclick="clearTimeout(a)">Stop</button>
+
+    <h3>Set Interval</h3>
+    <button onclick="b=setInterval(dataFetch,2000)">Set Interval</button>
+
+    <h3>Clear Interval</h3>
+    <button onclick="clearInterval(b)">Clear Interval</button>
+
+
+    <h3>Print Numbers</h3>
+    <button onclick="c=setInterval(countFunc,300)">Start</button>
+    <button onclick="clearInterval(c)">Stop</button>
+    <button onclick="clearInterval(c);funcInit();">Reset1</button>
+    <button onclick="reset();">Reset2</button>
+    <script src="22_04_2024_timingFunction.js"></script>
+    
+</body>
+</html>

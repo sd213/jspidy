@@ -1,0 +1,12 @@
+package org.jsp;
+
+public class JdbcApp2 {
+
+	public static void main(String[] args) {
+		
+		Class.forName("java.mysql.cj.jdbc.Driver");
+		
+
+	}
+
+}

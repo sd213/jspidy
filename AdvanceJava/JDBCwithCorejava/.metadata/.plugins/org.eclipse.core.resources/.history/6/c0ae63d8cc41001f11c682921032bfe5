@@ -1,0 +1,22 @@
+package tasks;
+
+import java.sql.Connection;
+
+import com.mysql.cj.xdevapi.Statement;
+
+public class SecondStatement {
+	
+	public static void main(String[] args) {
+		String url = "jdbc:mysql://localhost:3306/second";
+		String user = "root";
+		String pass = "toor";
+		Connection con = null;
+		Statement st = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection(url,user,pass);
+		}
+	}
+
+}
+

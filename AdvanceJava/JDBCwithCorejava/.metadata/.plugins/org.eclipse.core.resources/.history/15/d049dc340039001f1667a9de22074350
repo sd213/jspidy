@@ -1,0 +1,32 @@
+package com.fileHandling;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileHandleCreate {
+
+	public static void main(String[] args) throws IOException {
+		File f1 = new File("C:\\Downloads\\somitdas.txt");
+		
+			if(f1.exists()) {
+				System.out.println("File Already Exist");
+			}
+			else {
+				if(f1.createNewFile()) {
+					System.out.println("File Successfully Created");
+				}
+				else {
+					System.out.println("File Already Exist");
+				}
+			}
+			
+		System.out.println("File Details");
+		System.out.println("Can Execute :"+ f1.canExecute());
+		System.out.println("Can Read :"+f1.canRead());
+		System.out.println("Can Write :"+f1.canWrite());
+	}
+	
+		
+}
+
+

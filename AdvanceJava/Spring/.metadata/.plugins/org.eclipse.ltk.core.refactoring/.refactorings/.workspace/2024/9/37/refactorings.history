@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;springintro2&apos; to &apos;SetterInjectionWithLiteralValues&apos;" description="Rename resource &apos;springintro2&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/springintro2" name="SetterInjectionWithLiteralValues" stamp="1726126072905" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;springintro3&apos; to &apos;SetterInjectionWithAnotherBean&apos;" description="Rename resource &apos;springintro3&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/springintro3" name="SetterInjectionWithAnotherBean" stamp="1726126223517" updateReferences="true"/>
+</session>

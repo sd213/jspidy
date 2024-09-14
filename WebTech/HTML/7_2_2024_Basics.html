@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Text Formatting Tags</title>
+</head>
+<body>
+    <h1>Welcome to Web Class</h1> <!-- Largest in Size -->
+    <h2>Welcome to Web Class</h2>
+    <h3>Welcome to Web Class</h3>
+    <h4>Welcome to Web Class</h4>
+    <h5>Welcome to Web Class</h5>
+    <h6>Welcome to Web Class</h6> <!-- Smallest in Size-->
+    <h7>Welcome to Web Class</h7> <!-- Default font Size of System-->
+
+    <!-- Basic Tags-->
+    <p>I'm a paragraph tag</p>
+
+    <b>I'm a bold text</b>
+    <strong>Important tag</strong>
+
+    <i>Italic Design</i>
+    <em>emphasis tag</em>
+
+    <br> <!-- break line -->
+
+    <u>Undeline text</u>
+
+    <mark>highligter</mark>
+    
+    <del>20000</del>
+
+    <small>SMALL TEXT</small>
+
+    <sup>above</sup>
+
+    <sub>below</sub>
+
+    <!-- <sup> (super Script tag is used to set the content above the normal line)
+        <sub> (sub Script tag is used to set the content below the normal line) -->
+
+    <hr> 
+    <!-- Horizontal line/roller -->
+
+    <!-- 
+        Block Level tags:
+            Getting the result in next line or new line is called it as block level tags.
+
+            Ex:- Heading tags , p ,br , hr etc..
+
+        
+        Inline-Level tags:
+            Getting the result in sameline or side by side is called inline level tags .
+            
+            ex:- b , i , mark ,em ,sup ...
+
+     -->
+    <pre>        <!-- Pre formatted text -->
+        public class Main{
+            public static void Main (String [] args){
+                System.out.println("Hello World");
+            }
+        }
+    </pre>
+
+    <h1>Character Entity</h1>
+    
+</body>
+</html>
+
+<!-- 
+    
+HTML:
+    1.Introduction
+    2.Basic Text formatting tags
+    3.Character Entity.
+    4.Attributes
+    5.Media Tags
+    6.Creation of List
+    7.Creation of Tables
+    8.Hyperlinks
+    9.Forms
+    10.HTML -5
+
+
+
+  1. Intro:-
+    --------
+
+        HTML 1.0-1993
+             2.0-1995
+             3.0-1997
+             4.0-1999
+             5.0-2012
+
+        Mark up's 
+            <: open Markup
+            >: close markup
+            < > : Markups
+
+        Tags:
+            < > : Open tag
+            </ > : Closing Tag
+            < > ... </> : tags
+
+        Types of Tags:- 
+            -> Paired tag : combination of open tag & closing tag.
+                Syntax: <element name > ...... </element name>
+
+            -> Unpaired tag:  It is having only open tag 
+                Syntax: <element name>
+
+
+        HTML Syntax:
+                    <!DOCTYPE html> version
+                    <html>
+                            <head>...invisible content...</head>
+                            <body>...visible content...</body>
+                    </html>
+        Structure:
+                    
+                    <!DOCTYPE html> version
+                    <html>
+                            <head>
+                                    <meta>
+                                    <title></title>
+                                    <style></style>
+                                    <script></script>
+                                    <link>
+                            </head>
+                            <body>
+                                ...visible content...
+                            </body>
+                    </html>
+
+Note:-  
+
+    -> <html> tag is a root tag  of HTML & it is paired tag.
+    
+    -> <meta> tag is used to write small information about the webpage & it is a unpaired tag.
+
+    -> <title> tag is used to give title name for the webpage & it is paired tag.
+
+    -> <style> tag  is used to write css code & It is paired tag.
+
+    -> <script> tag is used to write javascript code & it is paired tag.
+
+    -> <link> tag is used to link external file & it is unpaired tag.
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Basic Text Formatting Tags</title>
+        </head>
+
+        <body>  
+            // 6 heading tags 
+            <h1> Heading 1 </h1>  largest insize
+            <h2> Heading 2 </h2> 
+            <h3> Heading 3 </h3> 
+            <h4> Heading 4 </h4> 
+            <h5> Heading 5 </h5> 
+            <h6> Heading 6 </h6>  smallest size
+            <h2> Heading 7 NOT WORKING </h2> 
+        </body
+        </html>
+        
+Tags:-
+    <p> paragraph tag </p>  -> formatting paragraph
+
+    <b> bold text </b>  , <strong> important </strong> -> both are used to bold text.
+
+    <i> italic design </i> , <em> emphasis text </em>  -> both are used to italic
+
+    <u> underline text </u> -> for underlining the text
+
+    <mark> highlight text </mark> -> for highlighting the text and default color is yellow.
+
+    <del> 20000</del> -> to strike the text
+
+    <sup> above </sup> -> above the normal line (superscript)
+
+    <sub> below </sub> -> below the normal line (subscript)
+
+    <small> ... </small> -> reduce the size of text
+
+    <br>   -> to break the line and move the cursor to next line.
+
+    <hr>   -> horizontal roller / horizontal line
+
+Block Level tags :-
+    Getting the results in next line or new line is called block level tags.
+
+            ex:- Heading tags , p ,br ,hr etc.
+
+Inline level elements:- 
+    Getting the results in same line or side by side is called inline level tags.
+
+            ex:- b, i ,mark ,em ,sup etc.
+
+
+    <pre>...</pre>
+            -> it is a preformatted text used to print exactly the same text.
+
+    
+    Character Entity:-
+        -> It is used to display special characters that are not present in the keyboard.
+        
+        <h3> special character not present in keyboard <h3>
+
+        <h4>
+            &alpha;  
+            &beta;
+            &gamma;
+            &theta;
+            &copy;
+
+            ; is compulsory for character entity otherwise it will print character as it.
+
+            ex:-  α , β , γ , θ
+
+            &npsp; -> it used to for giving extra space . It is called non-breakable space.
+        </h4>
+
+
+Attributes:-
+-------------
+    -> It is used to add the additional information for the html element.
+
+    Note:-
+        In open HTML tag we can write the HTML attributes.
+
+        Ex:- 
+            <h1 title="Hyper text mark up language  ">
+                HTML
+            </h1>
+
+    Title Attribute:-
+            It used to give title name for the HTML element.
+
+            
+        
+-->

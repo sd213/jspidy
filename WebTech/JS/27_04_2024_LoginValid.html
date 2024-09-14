@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page & Validation</title>
+    <link rel="stylesheet" href="27_04_2024_LoginValid.css">
+</head>
+<body>
+    <h1>Login Page & Validation</h1>
+    <h5></h5>
+    <form action="" onsubmit="loginPage(event)">
+        <div class="name">
+            <label>Name:</label>
+            <input type="text" placeholder="Enter Your Name" name="nam">
+        </div>
+        <div class="pass">
+            <label>Password :</label>
+            <input type="password" placeholder="Enter PassWord" name="passw">
+        </div>
+        <div class="button">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+
+    <hr>
+    <form action="" onsubmit="validation(event)">
+        <input type="text" placeholder="Enter User Name">
+        <input type="password" placeholder="Enter PassWord">
+        <button>Validation</button>
+    </form>
+    <hr>
+    <form action="" onsubmit="loginPage2(event)">
+        <div class="name">
+            <label>Name:</label>
+            <input type="text" placeholder="Enter Your Name" name="nam">
+        </div>
+        <div class="pass">
+            <label>Password :</label>
+            <input type="password" placeholder="Enter PassWord" name="passw">
+        </div>
+        <div class="button">
+            <input type="submit" value="Login & Validation">
+        </div>
+    </form>
+    <script src="./27_04_2024_LoginValid.js"></script>
+</body>
+</html>

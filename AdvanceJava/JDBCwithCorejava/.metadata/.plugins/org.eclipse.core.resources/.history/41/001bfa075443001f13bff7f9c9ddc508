@@ -1,0 +1,22 @@
+package org.jsp;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class JdbcApp2 {
+
+	public static void main(String[] args) {
+		
+		try {
+			Class.forName("java.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/second","root","toor");
+			Statement s = con.createStatement();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

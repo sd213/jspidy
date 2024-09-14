@@ -1,0 +1,88 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  min-height: 100vh;
+}
+/* Login */
+.formContainer{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formContainer form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.formContainer form .fieldset{
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.formContainer form input{
+  height: 30px;
+  padding: 8px 10px;
+  border: solid 1px rgba(128, 128, 128, 0.403);
+}
+.formContainer form input::placeholder{
+  padding: 0px 10px;
+}
+.formContainer form input[type="submit"]{
+  height: 40px;
+  width: 100px;
+  align-self : center;
+  color: whitesmoke;
+  background-color: mediumslateblue;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

@@ -1,0 +1,4 @@
+config/CpPPractice/cdt.launchMode=run
+config/CpPPractice/cdt.toolChain.id=gcc-x86_64-C\:/msys64/ucrt64/bin/gcc.exe
+config/CpPPractice/cdt.toolChain.type=org.eclipse.cdt.build.gcc
+eclipse.preferences.version=1

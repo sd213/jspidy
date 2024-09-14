@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bgprotector {
+  text-align: center;
+  width: 500px;
+  background-color: rgb(217, 220, 220);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.bgprotector h1 {
+  font-family: cursive;
+}
+.btn1,
+.btn2 {
+  font-family: cursive;
+  padding: 10px 20px;
+  border: 0px;
+  border-radius: 5px;
+}
+.btn1:hover,
+.btn2:hover {
+  transition: 0.4s;
+  box-shadow: 8px 8px 10px gray;
+}
+.btn1:active,
+.btn2:active {
+  transition: 0.3s;
+  box-shadow: 4px 4px 4px gray;
+  transform: translateY(4px);
+}
+.otpGenerator {
+  margin-top: 10vh;
+  height: 300px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.otpGenerator h2 {
+  font-family: cursive;
+}
+.otpGenerator .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.otpGenerator .form .input1 {
+  text-align: center;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 3px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .boxContainer{
+            padding:10px;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap:40px;
+        }
+        span{
+            display: flex;
+            align-items: center;
+            gap:30px;
+        }
+        .box{
+            height:150px;
+            width:150px;
+            border: solid 1px gray;
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .box2{
+            background-color: red;
+        }
+        .box3{
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM1</h1>
+    <h2 id="demo">Welcome</h2>
+    <button onclick="changeContent()">Click Here</button>
+    
+    <ul>
+        <li class="text">Jspiders</li>
+        <li class="text">Qspiders</li>
+        <li class="text">Pyspiders</li>
+    </ul>
+    <button onclick="example2()">Click Here</button>
+    <br>
+    <h3>Assignment</h3>
+    <div class="boxContainer">
+        <button onclick="example3()"> Change 3 box </button>
+        <span><div class="box box1">Hello</div>
+        <div class="box box2">Color</div>
+        <div class="box box3">Shape</div></span>
+    </div>
+   <!-- img -->
+   <hr>
+   <button id="btn" onclick="onoff()">ON</button>
+   <hr>
+    <script src="./23_04_2024_DOM.js"></script>
+</body>
+</html>
