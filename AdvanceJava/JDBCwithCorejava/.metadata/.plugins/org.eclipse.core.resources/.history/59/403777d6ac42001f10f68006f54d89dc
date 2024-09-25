@@ -1,9 +1,0 @@
-package creationupdationdeletion;
-
-public class UpdateClass {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}

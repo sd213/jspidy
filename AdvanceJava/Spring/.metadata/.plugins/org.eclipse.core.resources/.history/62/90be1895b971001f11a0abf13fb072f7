@@ -1,6 +1,0 @@
-package springannotation;
-
-@Component
-public class Mobile {
-
-}

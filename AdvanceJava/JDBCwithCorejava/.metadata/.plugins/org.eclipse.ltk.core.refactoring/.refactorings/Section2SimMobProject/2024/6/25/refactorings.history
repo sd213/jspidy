@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 3 elements to &apos;Section2/src/com.abstractionProjects&apos;&#x0D;&#x0A;- Original project: &apos;Section2SimMobProject&apos;&#x0D;&#x0A;- Destination element: &apos;Section2/src/com.abstractionProjects&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.mobile.MobilePhone.java&#x0D;&#x0A;     com.mobile.SimCard.java&#x0D;&#x0A;     com.mobile.ShopOwner.java" description="Copy compilation units" destination="=Section2/src&lt;com.abstractionProjects" element1="/src&lt;com.mobile{MobilePhone.java" element2="/src&lt;com.mobile{SimCard.java" element3="/src&lt;com.mobile{ShopOwner.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1718953174946" units="3" version="1.0"/>
-</session>

@@ -1,9 +1,0 @@
-package creationupdationdeletion;
-
-public class DynamicEntryApp {
-
-	public static void main(String[] args) {
-		
-	}
-
-}

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;jdbcConnection&apos; to &apos;jdbcconnection&apos;" description="Rename resource &apos;jdbcConnection&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/jdbcConnection" name="jdbcconnection" stamp="1721557430837" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;jdbcconnection&apos;" deleteContents="true" description="Delete resource &apos;jdbcconnection&apos;" element1="/jdbcconnection" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1721557445489"/>
-</session>

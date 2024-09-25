@@ -1,5 +1,0 @@
-package springintro2;
-
-public abstract interface Computer {
-
-}

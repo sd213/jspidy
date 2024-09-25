@@ -1,0 +1,1 @@
+Injection with with xml only and manually without component scanning
