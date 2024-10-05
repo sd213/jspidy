@@ -1,0 +1,5 @@
+package org.jsp.sixteenboot_ems.exceptionsclasses;
+
+public class NoEmployeeFoundException {
+
+}

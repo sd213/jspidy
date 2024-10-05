@@ -1,0 +1,13 @@
+package org.jsp.fifteenboot_eventmgmt.repository;
+
+import java.util.Optional;
+
+import org.jsp.fifteenboot_eventmgmt.entity.Event;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface EventRepository extends JpaRepository<Event, Integer> {
+	@Query("select e from Event e where e.name=:name")
+	Optional<Event> findEventByTitle(String title);
+
+}

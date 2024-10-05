@@ -1,0 +1,82 @@
+package org.jsp.fifteenboot_eventmgmt.controller;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+import org.jsp.fifteenboot_eventmgmt.entity.Event;
+import org.jsp.fifteenboot_eventmgmt.entity.EventStatus;
+import org.jsp.fifteenboot_eventmgmt.responsestructure.ResponseStructure;
+import org.jsp.fifteenboot_eventmgmt.service.EventService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EventController {
+	
+	@Autowired
+	private EventService service ;
+	
+//	postmap /events 
+	@PostMapping("/events")
+	public ResponseStructure<Event> saveEvent(
+			@RequestParam String title,
+            @RequestParam String place,
+            @RequestParam String date, // Accept date as String
+            @RequestParam EventStatus status){
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		LocalDate eventDate = LocalDate.parse(date,formatter);
+		Event event = new Event(0, title, place, date, status);
+	    return service.saveEvent(event);
+	}
+	
+//	putmap /events @Requstboty id
+	@PutMapping("/events/{id}")
+	public ResponseStructure<Event> updateEvent(@PathVariable int id, @RequestBody Event e){
+		return service.updateEvent(id, e);
+	}
+//	gm /events/name/{name}
+	@GetMapping("/events/name/{name}")
+	public ResponseStructure<Event> retrieveEventByName(@PathVariable String name){
+		return service.retrieveEventByName(name);
+	}
+//	gm /events/upcoming
+	@GetMapping("/events/upcoming")
+	public ResponseStructure<List<Event>> upcomingEvents(){
+		return service.upcomingEvents();
+	}
+//	gm /events/ongoing
+	@GetMapping("/events/ongoing")
+	public ResponseStructure<List<Event>> ongoingEvents(){
+		return service.ongoingEvents();
+	}
+//	gm /events/completed
+	@GetMapping("/events/completed")
+	public ResponseStructure<List<Event>> completedEvents(){
+		return service.completedEvents();
+	}
+//	gm /events
+	@GetMapping("/events")
+	public ResponseStructure<List<Event>> retrieveAllEvents(){
+		return service.retrieveAllEvents();
+	}
+//	getmap / events/{id}
+	@GetMapping("/events/{id}")
+	public ResponseStructure<Event> retrieveEventById(@PathVariable int id){
+		return service.retrieveEventById(id);
+	}
+	
+//	dm /event/{id}
+	@DeleteMapping("/events/{id}")
+	public ResponseStructure<String> deleteEvent(@PathVariable int id){
+		return service.deleteEvent(id);
+	}
+}	

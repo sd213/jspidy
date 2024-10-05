@@ -1,0 +1,190 @@
+package com.jsp.seventeenboot_ems.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+
+import com.jsp.seventeenboot_ems.dao.EmployeeDao;
+import com.jsp.seventeenboot_ems.entity.Employee;
+import com.jsp.seventeenboot_ems.exceptionclasses.InvalidCredentialsException;
+import com.jsp.seventeenboot_ems.exceptionclasses.InvalidEmployeeIdException;
+import com.jsp.seventeenboot_ems.exceptionclasses.NoActiveEmployeeFoundException;
+import com.jsp.seventeenboot_ems.responsestructure.ResponseStructure;
+import com.jsp.seventeenboot_ems.util.EmployeeStatus;
+
+@Component
+public class EmployeeService {
+
+	@Autowired
+	private EmployeeDao dao;
+	
+	public ResponseEntity<ResponseStructure<?>> saveEmployee(Employee employee){
+		employee.setStatus(EmployeeStatus.IN_ACTIVE);
+		
+		employee = dao.saveEmployee(employee);
+//		ResponseStructure<Employee> str = new ResponseStructure<>();
+		
+//		str.setStatus(201);
+//		str.setStatus(HttpStatus.CREATED.value());
+////		
+//		str.setMesg("Employee Saved Successfully");
+//		str.setBody(employee);
+		
+		//using builder pattern
+		ResponseStructure<Object> str = ResponseStructure.builder().status(HttpStatus.CREATED.value()).mesg("Employee Saved Successfully").body(employee).build();
+
+//		return new ResponseEntity<ResponseStructure<Employee>>(str,HttpStatus.CREATED);
+		return ResponseEntity.status(HttpStatus.CREATED.value()).body(str);
+	
+		
+	}
+	
+	public ResponseStructure<Employee> updateEmployee(Employee employee){
+		employee = dao.updateEmployee(employee);
+		ResponseStructure<Employee> structure = new ResponseStructure<>();
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("Employee Updated Successfully...");
+		structure.setBody(employee);
+		return structure;
+	}
+	
+	public ResponseStructure<Employee> findEmployeeById(int id){
+		Optional<Employee> op =dao.findEmployeeById(id);
+		ResponseStructure<Employee> structure = new ResponseStructure<>();
+		if(op.isEmpty()) {
+//			structure.setStatus(HttpStatus.NOT_FOUND.value());
+//			structure.setMesg("Invalid Employee Id...OR Unable to find Employee associated with given Id");
+//			structure.setBody(null);
+//			return structure;
+			throw new InvalidEmployeeIdException("Invalid Employee Id...OR Unable to find Employee associated with given Id");
+		}
+		Employee employee = op.get();
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("Employee Found Successfully....");
+		structure.setBody(employee);
+		return structure;
+	}
+	public ResponseStructure<List<Employee>> findAllEmployee(){
+		List<Employee> employees = dao.findAllActiveEmployees();
+		ResponseStructure<List<Employee>> structure = new ResponseStructure<>();
+		if(employees.isEmpty()) {
+//			structure.setStatus(HttpStatus.NOT_FOUND.value());
+//			structure.setMesg("No Employee Found in the Database Table...");
+//			structure.setBody(employees);
+//			return structure;
+			throw new NoActiveEmployeeFoundException("No Active Employee are found .... But There may be inactive Employee");
+		}
+//		ArrayList<Employee> activeEmployees = new ArrayList();
+		
+//		for(Employee e : employees) {
+//			if(e.getStatus()==EmployeeStatus.IN_ACTIVE)
+//				activeEmployees.add(e);
+//		}
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("All  Employees Found in the Database Table...");
+//		structure.setBody(activeEmployees);
+		structure.setBody(employees);
+		return structure;
+		
+	}
+	public ResponseStructure<String> deleteEmployeeById(int id){
+		Optional<Employee> optional = dao.findEmployeeById(id);
+		ResponseStructure<String> structure = new ResponseStructure<>();
+		if(optional.isEmpty()) {
+			structure.setStatus(HttpStatus.BAD_REQUEST.value());
+			structure.setMesg("Invalid ID");
+			structure.setBody("Unable to Delete Employee.... Invalid ID");
+			return structure;
+		}
+		dao.deleteEmployeeById(id);
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("");
+		structure.setBody("Employee deleted Successfully ....");
+		return structure;
+	}
+	public ResponseStructure<Employee> findEmployeeByEmailAndPasword(String email,String password){
+		ResponseStructure<Employee> structure = new ResponseStructure<>();
+		Optional<Employee> optional = dao.findEmployeeByEmailAndPassword(email, password);
+		if(optional.isEmpty()) {
+//			structure.setStatus(HttpStatus.NOT_FOUND.value());
+//			structure.setMesg("Invalid Credentials... Verification Failure ....");
+//			structure.setBody(null);
+//			return structure;
+			throw new InvalidCredentialsException("Invalid Email or Password");
+		}
+		Employee employee = optional.get();
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("Verification Successfull....");
+		structure.setBody(employee);
+		return structure;
+	}
+	public ResponseStructure<List<Employee>> findEmployeeByName(String name){
+		List<Employee> employees = dao.findEmployeeByName(name);
+		ResponseStructure<List<Employee>> structure = new ResponseStructure<>();
+		if(employees.isEmpty()) {
+//			structure.setStatus(HttpStatus.NOT_FOUND.value());
+//			structure.setMesg("No Employees Found");
+//			structure.setBody(employees);
+//			return structure;
+//			throw new NoEmployeeFoundException("No Matched Employee Found Exception");
+			throw new NoActiveEmployeeFoundException("No Active Employee Found Exception");
+		}
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("List of Employee Found Successfully....");
+		structure.setBody(employees);
+		return structure;
+		
+	}
+
+
+
+	public ResponseStructure<Employee> setEmployeeStatusToActive(int id) {
+		// TODO Auto-generated method stub
+		Optional<Employee>optional = dao.findEmployeeById(id);
+		ResponseStructure<Employee> structure = new ResponseStructure<>();
+		
+		if(optional.isEmpty()) {
+			structure.setStatus(HttpStatus.BAD_REQUEST.value());
+			structure.setMesg("Invalid Employee Id.... Unable to Make ACTIVE ");
+			structure.setBody(null);
+			return structure;
+		}
+		Employee employee = optional.get();
+		employee.setStatus(EmployeeStatus.ACTIVE);
+		
+		employee = dao.updateEmployee(employee);
+		
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("Employee Status Updated to Active....");
+		structure.setBody(employee);
+		return structure;
+	}
+	public ResponseStructure<Employee> setEmployeeStatusToInActive(int id) {
+		// TODO Auto-generated method stub
+		Optional<Employee>optional = dao.findEmployeeById(id);
+		ResponseStructure<Employee> structure = new ResponseStructure<>();
+		
+		if(optional.isEmpty()) {
+			structure.setStatus(HttpStatus.BAD_REQUEST.value());
+			structure.setMesg("Invalid Employee Id.... Unable to Make ACTIVE ");
+			structure.setBody(null);
+			return structure;
+		}
+		Employee employee = optional.get();
+		employee.setStatus(EmployeeStatus.IN_ACTIVE);
+		
+		employee = dao.updateEmployee(employee);
+		
+		structure.setStatus(HttpStatus.OK.value());
+		structure.setMesg("Employee Status Updated to In_Active....");
+		structure.setBody(employee);
+		return structure;
+	
+	}
+}

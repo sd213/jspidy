@@ -1,0 +1,5 @@
+package org.jsp.fourteen_boot.responsestructure;
+
+public class ResponseStructure {
+
+}

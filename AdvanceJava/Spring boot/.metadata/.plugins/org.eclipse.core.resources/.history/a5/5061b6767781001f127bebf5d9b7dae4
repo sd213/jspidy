@@ -1,0 +1,14 @@
+package org.jsp.sixteenboot_ems.exceptionhandler;
+
+import org.jsp.sixteenboot_ems.exceptionsclasses.NoActiveEmployeeFoundException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class EmployeeExceptionHandler {
+	
+	@ExceptionHandler(NoActiveEmployeeFoundException.class)
+//	public String noActiveEmployeeFoundExceptionHandler() {
+//		return "hi"
+//	}
+}

@@ -1,0 +1,20 @@
+package org.jsp.thirteen_boot.controller;
+
+import org.jsp.thirteen_boot.entity.Person;
+import org.jsp.thirteen_boot.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class PersonService {
+	
+	@Autowired
+	private PersonDao dao;
+	
+	public ResponseStructure<Person> savePerson(Person person) {
+		ResponseStructure<Person> structure = new ResponseStructure<>();
+		structure.setStatus(201);
+		structure.setMessage("Person Saved Successfully");
+		return null;
+	}
+}

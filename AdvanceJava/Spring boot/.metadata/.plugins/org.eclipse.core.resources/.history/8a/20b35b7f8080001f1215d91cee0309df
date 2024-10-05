@@ -1,0 +1,11 @@
+package org.jsp.fifteenboot_eventmgmt.dao;
+
+import org.jsp.fifteenboot_eventmgmt.repository.EventRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class EventDao {
+	@Autowired
+	private EventRepository repos;
+}

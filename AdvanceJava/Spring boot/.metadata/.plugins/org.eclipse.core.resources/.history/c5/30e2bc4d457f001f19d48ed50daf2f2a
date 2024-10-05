@@ -1,0 +1,63 @@
+package org.jsp.fourteen_boot.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.jsp.fourteen_boot.entity.Vehicle;
+import org.jsp.fourteen_boot.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
+
+
+@RestController
+public class VehicleController {
+	@Autowired
+	private VehicleService vs;
+	
+	@GetMapping("/vehicles")
+	public void findAllVehiclesController() {
+		
+	}
+	@GetMapping("/vehicles/{id}")
+	public void findVehicleByIdController(@PathVariable int id) {
+		
+	}
+	@PostMapping("/vehicle")
+	public ResponseStructure<Vehicle> saveVehicleController(  @RequestParam("name") String regno,
+            @RequestParam("type") String type, @RequestParam("color") String color) {
+		Vehicle newVehicle = new Vehicle();
+	
+		newVehicle.setRegno(regno);
+		newVehicle.setColor(color);
+		newVehicle.setType(type);
+		return vs.saveVehicleService(newVehicle);
+	}
+	@PostMapping("/vehicles")
+	public void saveVehiclesController(@RequestBody List<Vehicle> person) {
+		System.out.println(person);
+		
+	}
+	@DeleteMapping("/vehicle")
+	public ResponseStructure<String> deleteByIdController(@RequestParam int id){
+		return null;
+	}
+	
+	@PutMapping("/vehicle")
+	public ResponseStructure<String> updateVehicleById(@RequestParam int id, @RequestBody Vehicle UpdatedVehicle){
+		return null;
+	}
+	
+	@PatchMapping("/vehicle")
+	public ResponseStructure<String> patchVehicleById(@RequestParam int id,@RequestBody Vehicle patchedVehicle){
+		return null;
+	}
+	
+}

@@ -1,0 +1,5 @@
+package org.jsp.elevenboot_doctormanagement.responsestructure;
+
+public class ResponseStructure {
+
+}

@@ -1,0 +1,31 @@
+package org.jsp.thirteen_boot.controller;
+
+import java.util.List;
+
+import org.jsp.thirteen_boot.entity.Person;
+import org.jsp.thirteen_boot.repository.PersonRepository;
+import org.jsp.thirteen_boot.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class PersonDao {
+	@Autowired
+	private PersonRepository repos;
+	public Person savePersonDao(Person person) {
+		return repos.save(person);
+	}
+	
+	public List<Person> findAllUsersDao(){
+		return repos.findAll();
+	}
+	public Object findUserByIdService(int id){
+		
+	}
+	public void  deleteUserByIdService(int id){
+		
+	}
+	public Person updatePersonService(Person person){
+		
+	}
+}

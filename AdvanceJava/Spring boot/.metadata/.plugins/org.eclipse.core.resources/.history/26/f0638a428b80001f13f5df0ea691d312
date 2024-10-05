@@ -1,0 +1,12 @@
+package org.jsp.fifteenboot_eventmgmt.service;
+
+import org.jsp.fifteenboot_eventmgmt.dao.EventDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class EventService {
+	@Autowired
+	private EventDao dao;
+	
+}

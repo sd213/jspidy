@@ -1,0 +1,5 @@
+package com.jsp.seventeenboot_ems.entity;
+
+public class Employee {
+
+}

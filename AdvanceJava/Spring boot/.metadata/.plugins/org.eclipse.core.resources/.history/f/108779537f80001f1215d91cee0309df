@@ -1,0 +1,31 @@
+package org.jsp.fifteenboot_eventmgmt.controller;
+
+import org.jsp.fifteenboot_eventmgmt.entity.Event;
+import org.jsp.fifteenboot_eventmgmt.responsestructure.ResponseStructure;
+import org.jsp.fifteenboot_eventmgmt.service.EventService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EventController {
+	
+	@Autowired
+	private EventService service ;
+	
+//	postmap /events 
+	@PostMapping("/events")
+	public ResponseStructure<Event> saveEvent(@RequestBody Event e){
+		return null;
+	}
+	
+//	putmap /events @Requstboty id
+//	gm /event/name/{name}
+//	gm /events/upcoming
+//	gm /events/ongoing
+//	gm /events/completed
+//	dm /event/{id}
+//	gm /events
+//	getmap / events/{id}
+}	

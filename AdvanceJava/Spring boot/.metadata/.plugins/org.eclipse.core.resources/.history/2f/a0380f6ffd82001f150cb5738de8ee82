@@ -1,0 +1,11 @@
+package com.jsp.seventeenboot_ems.entity;
+
+public class Education {
+	private int e_id;
+	private String qualification;
+	private String universityName;
+	private double percentage;
+	private int completionYear;
+	private String highestQualification;
+	
+}

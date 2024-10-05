@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;thirteen_boot&apos; to &apos;thirteen_boot_separate_of_concerns_pms&apos;" description="Rename resource &apos;thirteen_boot&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/thirteen_boot" name="thirteen_boot_separate_of_concerns_pms" stamp="1727687383437" updateReferences="true"/>
+</session>

@@ -1,0 +1,17 @@
+package org.jsp.sixteenboot_ems.controller;
+
+import org.jsp.sixteenboot_ems.responsestructure.ResponseStructure;
+import org.jsp.sixteenboot_ems.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	private EmployeeService service;
+	
+	@PostMapping(value ="/employees")
+	public ResponseStructure<>
+	
+}

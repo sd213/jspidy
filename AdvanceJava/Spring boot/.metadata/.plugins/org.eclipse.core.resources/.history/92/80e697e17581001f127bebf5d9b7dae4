@@ -1,0 +1,10 @@
+package org.jsp.sixteenboot_ems.service;
+
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class InvalidCredentialsException extends RuntimeException {
+	private String mesg;
+	public InvalidCredentialsException(String )
+	
+}

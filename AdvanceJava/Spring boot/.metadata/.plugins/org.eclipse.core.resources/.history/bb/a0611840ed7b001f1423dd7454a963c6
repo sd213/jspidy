@@ -1,0 +1,7 @@
+package com.jsp.fifthboot_ums;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+
+}

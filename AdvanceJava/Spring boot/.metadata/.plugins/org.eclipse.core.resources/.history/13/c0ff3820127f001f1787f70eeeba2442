@@ -1,0 +1,68 @@
+package org.jsp.thirteen_boot.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.jsp.thirteen_boot.entity.Person;
+import org.jsp.thirteen_boot.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class PersonService {
+	
+	@Autowired
+	private PersonDao dao;
+	
+	public ResponseStructure<Person> savePersonService(Person person) {
+		Person dbUser = dao.savePersonDao(person);
+		ResponseStructure<Person> structure = new ResponseStructure<>();
+		structure.setStatus(201);
+		structure.setMessage("Person Saved Successfully");
+		structure.setBody(dbUser);
+		return structure;
+	}
+	
+	public ResponseStructure<List<Person>> findAllUsersService() {
+		List<Person> pl = dao.findAllUsersDao();
+		ResponseStructure<List<Person>> structure =  new ResponseStructure<>();
+		if(pl.isEmpty()) {
+			structure.setStatus(404);
+			structure.setMessage("No Users Found");
+			structure.setBody(null);
+			return structure;
+			
+		}else {
+			structure.setStatus(200);
+			structure.setMessage("Query Executed Successfully");
+			structure.setBody( pl);
+			return structure;
+		}
+		
+	}
+	public ResponseStructure<Object> findUserByIdService(int id){
+		Optional<Person> op =dao.findUserByIdDao(id);
+		ResponseStructure<Person> structure = new ResponseStructure<>();
+		if(op.isPresent()) {
+			Person p= op.get();
+			structure.setStatus(200);
+			structure.setMessage("Found Person Successfully");
+			structure.setBody(p);
+			return structure;
+			
+		}
+		else {
+			
+			structure.setStatus(404);
+			structure.setMessage("No Person Found");
+			structure.setBody(null);
+			return structure;
+		}
+	}
+	public ResponseStructure<String> deleteUserByIdService(int id){
+		
+	}
+	public ResponseStructure<Person> updatePersonService(Person person){
+		
+	}
+}

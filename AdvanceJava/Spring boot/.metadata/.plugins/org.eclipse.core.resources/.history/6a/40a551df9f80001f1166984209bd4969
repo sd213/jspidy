@@ -1,0 +1,6 @@
+package org.jsp.sixteenboot_ems.dao;
+
+@Component
+public class EmployeeDao {
+	
+}

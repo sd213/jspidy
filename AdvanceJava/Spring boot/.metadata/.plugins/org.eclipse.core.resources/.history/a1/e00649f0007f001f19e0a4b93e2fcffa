@@ -1,0 +1,26 @@
+package org.jsp.elevenboot_doctormanagement.controller;
+
+import org.jsp.elevenboot_doctormanagement.entity.Doctor;
+import org.jsp.elevenboot_doctormanagement.repository.DoctorRepository;
+import org.jsp.elevenboot_doctormanagement.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DoctorController {
+	@Autowired
+	private DoctorRepository repos;
+	
+	@PostMapping("/doctors")
+	public ResponseStructure<Doctor> saveUser(@RequestBody Doctor doc){
+		repos.save(doc);
+		ResponseStructure<Doctor> structure = new ResponseStructure<>();
+		structure.setStatus(201);
+		structure.setMessage("Patient Saved Successfully");
+		structure.setBody(doc);
+		return structure;
+	}
+}

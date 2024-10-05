@@ -1,0 +1,19 @@
+package com.jsp.seventeenboot_ems.entity;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@NoArgsConstructor
+public class Education {
+	private int e_id;
+	private String qualification;
+	private String universityName;
+	private double percentage;
+	private int completionYear;
+	private String highestQualification;
+	
+}

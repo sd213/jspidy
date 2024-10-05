@@ -1,0 +1,11 @@
+package org.jsp.sixteenboot_ems.service;
+
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class InvalidEmployeeIdException extends RuntimeException{
+	private String message;
+	public InvalidEmployeeIdException(String message) {
+		this.message = message;
+	}
+}

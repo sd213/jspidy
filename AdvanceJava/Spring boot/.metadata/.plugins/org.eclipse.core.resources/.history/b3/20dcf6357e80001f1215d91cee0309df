@@ -1,0 +1,17 @@
+package org.jsp.fifteenboot_eventmgmt.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EventController {
+	
+//	postmap /events 
+//	putmap /events @Requstboty id
+//	gm /event/name/{name}
+//	gm /events/upcoming
+//	gm /events/ongoing
+//	gm /events/completed
+//	dm /event/{id}
+//	gm /events
+//	getmap / events/{id}
+}	

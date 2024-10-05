@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;ninthboot_pms&apos;&#x0D;&#x0A;- Original project: &apos;ninthboot_pms&apos;&#x0D;&#x0A;- Original element: &apos;ninthboot_pms/src/main/java/org.jsp.eightboot_pms&apos;" description="Delete element" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.jsp.eightboot_pms" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1727515952141" subPackages="false" version="1.0"/>
+</session>

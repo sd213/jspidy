@@ -1,0 +1,5 @@
+package org.jsp.sixteenboot_ems;
+
+public enum EmployeeStatus {
+	ACTIVE(200),IN_ACTIVE(300)
+}

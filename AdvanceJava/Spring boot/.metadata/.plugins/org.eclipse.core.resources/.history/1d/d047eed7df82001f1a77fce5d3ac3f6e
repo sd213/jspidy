@@ -1,0 +1,15 @@
+package com.jsp.seventeenboot_ems.exceptionclasses;
+
+public class NoEmployeeFoundException extends RuntimeException{
+	private String message;
+	public NoEmployeeFoundException(String message) {
+		// TODO Auto-generated constructor stub
+		this.message=message;
+	}
+	
+	@Override
+	public String getMessage() {
+		return this.message;
+	}
+
+}

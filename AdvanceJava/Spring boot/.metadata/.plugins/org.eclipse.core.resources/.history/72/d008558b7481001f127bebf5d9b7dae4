@@ -1,0 +1,6 @@
+package org.jsp.sixteenboot_ems.service;
+
+public class InvalidEmployeeIdException extends RuntimeException{
+	private String message;
+	
+}

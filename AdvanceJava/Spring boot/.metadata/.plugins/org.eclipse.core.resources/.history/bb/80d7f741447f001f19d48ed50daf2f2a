@@ -1,0 +1,17 @@
+package org.jsp.fourteen_boot.controller;
+
+import org.jsp.fourteen_boot.entity.Vehicle;
+import org.jsp.fourteen_boot.repository.VehicleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class VehicleDAO {
+	@Autowired
+	private VehicleRepository vrepos;
+	
+	public Vehicle saveVehicleDAO(Vehicle vh){
+		return vrepos.save(vh);
+	}
+
+}

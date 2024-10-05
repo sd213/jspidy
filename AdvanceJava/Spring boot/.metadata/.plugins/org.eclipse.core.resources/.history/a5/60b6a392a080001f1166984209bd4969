@@ -1,0 +1,9 @@
+package org.jsp.sixteenboot_ems.dao;
+
+import org.jsp.sixteenboot_ems.repository.EmployeeRepository;
+import org.springframework.stereotype.Component;
+
+@Component
+public class EmployeeDao {
+	private EmployeeRepository repos;
+}

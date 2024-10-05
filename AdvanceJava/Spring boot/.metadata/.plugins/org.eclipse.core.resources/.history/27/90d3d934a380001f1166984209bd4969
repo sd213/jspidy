@@ -1,0 +1,12 @@
+package org.jsp.sixteenboot_ems.responsestructure;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class ResponsStructure <T>{
+	private int id;
+	private String mesg;
+	private <T> body;
+}

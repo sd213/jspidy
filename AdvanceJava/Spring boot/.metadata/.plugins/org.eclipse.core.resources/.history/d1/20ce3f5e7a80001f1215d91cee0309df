@@ -1,0 +1,5 @@
+package org.jsp.fifteenboot_eventmgmt.repository;
+
+public class EventRepository {
+
+}

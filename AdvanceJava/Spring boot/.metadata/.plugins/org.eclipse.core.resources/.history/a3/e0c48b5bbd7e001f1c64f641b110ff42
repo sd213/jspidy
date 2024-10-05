@@ -1,0 +1,26 @@
+package org.jsp.tenthboot_patientmanagement.controller;
+
+import org.jsp.tenthboot_patientmanagement.entity.Patient;
+import org.jsp.tenthboot_patientmanagement.repository.PatientRepository;
+import org.jsp.tenthboot_patientmanagement.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PatientController {
+	@Autowired
+	PatientRepository repository;
+	
+	@PostMapping("/patients")
+	public ResponseStructure<Patient> savePatient(@RequestBody Patient patient){
+		
+		repository.save(patient);
+		ResponseStructure<Patient> structure = new ResponseStructure<>();
+		structure.setStatus(201);
+		structure.setMessage("Patient Saved Successfully");
+		structure.setBody(patient);
+		return structure;
+	}
+}

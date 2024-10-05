@@ -1,0 +1,5 @@
+package org.jsp.fourteen_boot.controller;
+
+public class VehicleController {
+
+}

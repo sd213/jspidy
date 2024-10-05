@@ -1,0 +1,193 @@
+package org.jsp.fourteen_boot.controller;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Optional;
+
+import org.jsp.fourteen_boot.entity.Vehicle;
+import org.jsp.fourteen_boot.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Component
+public class VehicleService {
+	@Autowired
+	private VehicleDAO vdao;
+	
+	public  ResponseStructure<List<Vehicle>> findAllVehiclesService(){
+		List<Vehicle> allVehicle = vdao.findAllVehiclesDAO();
+		ResponseStructure<List<Vehicle>> str = new ResponseStructure<>();
+		if(allVehicle != null && allVehicle.size()!=0) {
+			str.setStatusCode(200);
+			if(allVehicle.size()==1) {
+				str.setStatusMesg("One Vehicle Found");
+			}else {
+				str.setStatusMesg("List Of Vehicles Found");
+			}
+			str.setResbody(allVehicle);
+		} 
+		else {
+			str.setStatusCode(404);
+			str.setStatusMesg("No Vehicle Found");
+			str.setResbody(null);
+		}
+		return str ;
+	}
+	public ResponseStructure<Vehicle> findSpecificVehicleService(int id){
+		Optional<Vehicle> op = vdao.findSpecificVehicleDAO(id);
+		ResponseStructure<Vehicle> str = new ResponseStructure<>();
+		if(op.isEmpty()) {
+			str.setStatusCode(404);
+			str.setStatusMesg("Not Found");
+			str.setResbody(null);
+		}else {
+			str.setStatusCode(200);
+			str.setStatusMesg("Found Vehicle");
+			str.setResbody(op.get());
+		}
+		return str;
+	}
+	
+	public ResponseStructure<Vehicle> saveVehicleService(Vehicle vh){
+		Vehicle savedVehicle = vdao.saveVehicleDAO(vh);
+		ResponseStructure<Vehicle> str = new ResponseStructure<>();
+		if(savedVehicle != null) {
+			str.setStatusCode(201);
+			str.setStatusMesg("Vehicle Added");
+			str.setResbody(savedVehicle);			
+		}else {
+			str.setStatusCode(500);
+			str.setStatusMesg("Failed in Adding Vehicle");
+			str.setResbody(null);
+		}
+		return str;
+	}
+	public ResponseStructure<List<Vehicle>> saveVehiclesService( List<Vehicle> vehiclelist) {
+		Iterator<Vehicle> vl  = vehiclelist.iterator();
+		List<Vehicle> vehiclelist2 = new ArrayList<>();
+		ResponseStructure<List<Vehicle>> str = new ResponseStructure<>();
+		while(vl.hasNext()) {
+			vehiclelist2.add(vdao.saveVehicleDAO(vl.next()));
+		}
+		if(vehiclelist2 != null && vehiclelist2.containsAll(vehiclelist)) {
+			str.setStatusCode(201);
+			str.setStatusMesg("Vehicles Added");
+			str.setResbody(vehiclelist);	
+		}else {
+			str.setStatusCode(500);
+			str.setStatusMesg("Some Internal Error");
+			str.setResbody(null);
+		}
+		return str;
+	}
+	
+	public ResponseStructure<String> deleteByIdController(@RequestParam int id){
+		Optional<Vehicle> op = vdao.findSpecificVehicleDAO(id);
+		ResponseStructure<String> str = new ResponseStructure<>();
+		if(op.isEmpty()) {
+			str.setStatusCode(404);
+			str.setStatusMesg("Unable to Perform this Action ");
+			str.setResbody("Vehicle Associated with this id is not present");
+		}else {
+			vdao.deleteByIdDAO(id);
+			op=vdao.findSpecificVehicleDAO(id);
+			if(op.isPresent()) {
+				str.setStatusCode(500);
+				str.setStatusMesg("Unable to Perform this Action ");
+				str.setResbody("Some Error Occurred so Vehicle not deleted");
+			}else {
+				str.setStatusCode(204);
+				str.setStatusMesg("Successfull");
+				str.setResbody("Able to Delete This... "+id);
+				
+			}
+		}
+		return str;
+	}
+	
+	public ResponseStructure<String> deleteAllService() {
+		List<Vehicle> vehiclelist =vdao.findAllVehiclesDAO();
+
+		ResponseStructure<String> str = new ResponseStructure<>();
+		if(vehiclelist.size()>0) {
+			vdao.deleteALLDAO();
+			vehiclelist = vdao.findAllVehiclesDAO();
+			if(vehiclelist.size()==0) {
+				str.setStatusCode(204);
+				str.setStatusMesg("Successfull");
+				str.setResbody("Able to Delete This... ");
+			}
+			else {
+				str.setStatusCode(500);
+				str.setStatusMesg("Not Successfull");
+				str.setResbody("Not Able to Delete The Vehicle List... ");
+			}
+		}else {
+			str.setStatusCode(404);
+			str.setStatusMesg("Not Successfull");
+			str.setResbody("No Vehicle Found in List ");
+		}
+		return str;
+	}
+	
+	public ResponseStructure<String> updateVehicleByIdService(int id, Vehicle updatedVehicle){
+		Optional<Vehicle> op = vdao.findSpecificVehicleDAO(id);
+		ResponseStructure<String> str = new ResponseStructure<>();
+		if(op.isPresent()) {
+			Vehicle oldVehicle = op.get();
+			oldVehicle.setColor(updatedVehicle.getColor());
+			oldVehicle.setRegno(updatedVehicle.getRegno());
+			oldVehicle.setType(updatedVehicle.getType());
+			vdao.saveVehicleDAO(oldVehicle);
+			str.setStatusCode(201);
+			str.setStatusMesg("Updated Vehicle");
+			str.setResbody("Updating Vehicle on Given Id");
+			
+		}else {
+			vdao.saveVehicleDAO(updatedVehicle);
+			str.setStatusCode(201);
+			str.setStatusMesg("Added Vehicle");
+			str.setResbody("Updating Vehicle on Given Id");
+//			str.setStatusCode(500);
+//			str.setStatusMesg("Unable to Update Value");
+//			str.setResbody("Vehicle Associated with this id is not present");
+		}
+		return str;
+	}
+	public ResponseStructure<String> patchVehicleByIdService(int id, Vehicle patchedVehicle){
+		Optional<Vehicle> op = vdao.findSpecificVehicleDAO(id);
+		ResponseStructure<String> str = new ResponseStructure<>();
+		if(op.isPresent()) {
+			Vehicle oldVehicle = op.get();
+			if(patchedVehicle.getColor()!=null) {
+				
+				oldVehicle.setColor(patchedVehicle.getColor());
+			}
+			if(patchedVehicle.getRegno()!=null) {
+				oldVehicle.setRegno(patchedVehicle.getRegno());
+			}
+			if(patchedVehicle.getType()!= null) {
+				oldVehicle.setType(patchedVehicle.getRegno());
+			}
+			
+			vdao.saveVehicleDAO(oldVehicle);
+			str.setStatusCode(201);
+			str.setStatusMesg("Patched  Successfully");
+			str.setResbody("Patched Vehicle Successfully on Given Id");
+			
+		}else {
+			
+			str.setStatusCode(500);
+			str.setStatusMesg("Unable to Patch Value");
+			str.setResbody("Vehicle Associated with this id is not present");
+		}
+		return str;
+	}
+
+	
+		
+}

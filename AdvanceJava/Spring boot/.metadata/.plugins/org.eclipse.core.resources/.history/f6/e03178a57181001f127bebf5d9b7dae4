@@ -1,0 +1,5 @@
+package org.jsp.sixteenboot_ems.service;
+
+public class NoActiveEmployeeFoundException extends RuntimeException {
+
+}

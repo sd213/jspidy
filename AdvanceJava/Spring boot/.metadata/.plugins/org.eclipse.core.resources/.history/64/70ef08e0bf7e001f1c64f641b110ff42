@@ -1,0 +1,7 @@
+package org.jsp.elevenboot_doctormanagement.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DoctorRepository extends JpaRepository<T, ID> {
+
+}

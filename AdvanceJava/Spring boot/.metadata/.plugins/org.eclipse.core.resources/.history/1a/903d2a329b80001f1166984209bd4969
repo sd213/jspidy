@@ -1,0 +1,12 @@
+package org.jsp.fifteenboot_eventmgmt.repository;
+
+import java.util.Optional;
+
+import org.jsp.fifteenboot_eventmgmt.entity.Event;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EventRepository extends JpaRepository<Event, Integer> {
+	
+	Optional<Event> findEventByName(String name);
+
+}

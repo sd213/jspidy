@@ -1,0 +1,38 @@
+package org.jsp.fourteen_boot.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class VehicleController {
+	@Autowired
+	private VehicleService vs;
+	
+	@GetMapping("/vehicles")
+	public void findAllVehiclesController() {
+		
+	}
+	@GetMapping("/vehicles/${id}")
+	public void findVehicleByIdController(@PathVariable int id) {
+		
+	}
+	@PostMapping("/vehicle")
+	public void saveVehicleController(  @RequestParam("name") String regno,
+            @RequestParam("age") String type,
+            @RequestParam("hobbies") String color) {
+		
+	}
+	@PostMapping("/vehicles")
+	public void saveVehiclesController(@RequestBody List<Map<String,String>> person) {
+		System.out.println(person);
+	}
+	
+}

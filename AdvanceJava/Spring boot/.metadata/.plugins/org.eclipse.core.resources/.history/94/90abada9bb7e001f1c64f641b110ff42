@@ -1,0 +1,5 @@
+package org.jsp.tenthboot_patientmanagement.responsestructure;
+
+public class ResponseStructure<T> {
+
+}

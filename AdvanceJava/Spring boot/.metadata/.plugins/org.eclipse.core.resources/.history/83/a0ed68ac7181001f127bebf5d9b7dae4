@@ -1,0 +1,13 @@
+package org.jsp.sixteenboot_ems.service;
+
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+public class NoActiveEmployeeFoundException extends RuntimeException {
+	private String message;
+	public NoActiveEmployeeFoundException(String message) {
+		// TODO Auto-generated constructor stub
+		this.message = message
+	}
+	
+}

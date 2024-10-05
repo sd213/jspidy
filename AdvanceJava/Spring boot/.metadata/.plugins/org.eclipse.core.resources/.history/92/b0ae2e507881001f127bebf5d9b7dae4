@@ -1,0 +1,28 @@
+package org.jsp.sixteenboot_ems.exceptionhandler;
+
+import java.io.NotActiveException;
+
+import org.jsp.sixteenboot_ems.exceptionsclasses.NoActiveEmployeeFoundException;
+import org.jsp.sixteenboot_ems.responsestructure.ResponseStructure;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class EmployeeExceptionHandler {
+	
+	@ExceptionHandler(NoActiveEmployeeFoundException.class)
+//	public String noActiveEmployeeFoundExceptionHandler() {
+//		return "hi"
+//	}
+//	service -> ExceptionHandler->
+	public ResponseStructure<String> noActiveEmployeeFoundExceptionHandler(NotActiveException e) {
+		
+		ResponseStructure<String> structure = new ResponseStructure<>();
+		structure.setStatus(HttpStatus.NOT_FOUND.value());
+		structure.setMesg("No Active Employee....");
+		
+		return 
+	}
+	
+}

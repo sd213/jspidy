@@ -1,0 +1,58 @@
+package org.jsp.sixteenboot_ems.exceptionhandler;
+
+import java.io.NotActiveException;
+
+import org.jsp.sixteenboot_ems.exceptionsclasses.InvalidCredentialsException;
+import org.jsp.sixteenboot_ems.exceptionsclasses.InvalidEmployeeIdException;
+import org.jsp.sixteenboot_ems.exceptionsclasses.NoActiveEmployeeFoundException;
+import org.jsp.sixteenboot_ems.exceptionsclasses.NoEmployeeFoundException;
+import org.jsp.sixteenboot_ems.responsestructure.ResponseStructure;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class EmployeeExceptionHandler {
+	
+//	service -> ExceptionHandler->
+	@ExceptionHandler(NoActiveEmployeeFoundException.class)
+//	public String noActiveEmployeeFoundExceptionHandler() {
+//		return "hi"
+//	}
+	public ResponseStructure<String> noActiveEmployeeFoundExceptionHandler(NoActiveEmployeeFoundException e) {
+		
+		ResponseStructure<String> structure = new ResponseStructure<>();
+		structure.setStatus(HttpStatus.NOT_FOUND.value());
+		structure.setMesg("No Active Employee....");
+		structure.setBody(e.getMessage());
+		return structure;
+	}
+	
+	@ExceptionHandler(InvalidEmployeeIdException.class)
+	public ResponseStructure<String> invalidEmployeeIdExceptionHandler(InvalidEmployeeIdException e){
+		ResponseStructure<String> structure = new ResponseStructure<>();
+		structure.setStatus(HttpStatus.NOT_FOUND.value());
+		structure.setMesg("Invalid Employee Id ....");
+		structure.setBody(e.getMessage());
+		return structure;
+	}
+	
+	@ExceptionHandler(InvalidCredentialsException.class)
+	public ResponseStructure<String> invalidCredentialsExceptionHandler(InvalidCredentialsException e){
+		ResponseStructure<String> structure = new ResponseStructure<>();
+		structure.setStatus(HttpStatus.NOT_FOUND.value());
+		structure.setMesg("Invalid Email and Passwords....");
+		structure.setBody(e.getMessage());
+		return structure;
+	}
+	
+	@ExceptionHandler(NoEmployeeFoundException.class)
+	public ResponseEntity<String> noEmployeeFoundExceptionHandler(NoEmployeeFoundException e){
+		ResponseEntity<String> structure = new ResponseStructure<>();
+		structure.setStatus(HttpStatus.NOT_FOUND.value());
+		structure.setMesg("No Employee Found ....");
+		structure.setBody(e.getMessage());
+		return new ResponseEntity<String>(structure,HttpStatus.OK);
+	}
+}

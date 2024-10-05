@@ -1,0 +1,109 @@
+package org.jsp.tenthboot_patientmanagement.controller;
+
+import java.util.List;
+import java.util.Optional;
+import org.jsp.tenthboot_patientmanagement.entity.Patient;
+import org.jsp.tenthboot_patientmanagement.repository.PatientRepository;
+import org.jsp.tenthboot_patientmanagement.responsestructure.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PatientController {
+	@Autowired
+	PatientRepository repository;
+	
+	@PostMapping("/patients")
+	public ResponseStructure<Patient> savePatient(@RequestBody Patient patient){
+		
+		repository.save(patient);
+		ResponseStructure<Patient> structure = new ResponseStructure<>();
+		structure.setStatus(201);
+		structure.setMessage("Patient Saved Successfully");
+		structure.setBody(patient);
+		return structure;
+	}
+	@GetMapping("/patients")
+	public ResponseStructure<List<Patient>> findAllUsers() {
+		List<Patient> pl = repository.findAll();
+		ResponseStructure<List<Patient>> structure =  new ResponseStructure<>();
+		if(pl.isEmpty()) {
+			structure.setStatus(404);
+			structure.setMessage("No Patients Found");
+			structure.setBody(null);
+			return structure;
+		}else {
+			structure.setStatus(200);
+			structure.setMessage("Query Executed Successfully");
+			structure.setBody( pl);
+			return structure;
+		}
+	}
+	@GetMapping("/patients/{id}")
+	public ResponseStructure<Object> findUserById(@PathVariable int id) {
+		Optional<Patient> op =repository.findById(id);
+		ResponseStructure<Object> structure = new ResponseStructure<>();
+		if(op.isPresent()) {
+			Patient p= op.get();
+			structure.setStatus(200);
+			structure.setMessage("Found Patient Successfully");
+			structure.setBody(p);
+			return structure;
+			
+		}
+		else {
+			
+			structure.setStatus(404);
+			structure.setMessage("No Patient Found");
+			structure.setBody(null);
+			return structure;
+		}
+	}
+	@DeleteMapping("/patients")
+	public ResponseStructure<String> deleteUserById(@RequestParam int id) {
+		Optional<Patient> op =repository.findById(id);
+		ResponseStructure<String> structure = new ResponseStructure<>();
+		
+		if(op.isPresent()) {
+			Patient p = op.get();
+			repository.deleteById(id);
+			op=repository.findById(id);
+			if(op.isEmpty()) {
+				structure.setStatus(200);
+				structure.setMessage("Deleted  Successfully");
+				structure.setBody("Patient Deleted");
+				return structure;
+			}else {
+				structure.setStatus(500);
+				structure.setMessage("Deletion Operation performed Unsuccesfully");
+				structure.setBody("No Patient Found");
+				return structure;
+			}
+		}
+		else {
+			structure.setStatus(404);
+			structure.setMessage("No Users Found");
+			structure.setBody("No Patient is there to delete");
+			return structure;
+		}
+	}
+	
+	@PutMapping("/patients")
+	public ResponseStructure<Patient> updatePatient(@RequestBody Patient patient){
+		
+		repository.save(patient);
+		ResponseStructure<Patient> structure =  new ResponseStructure<>();
+		structure.setStatus(201);
+		structure.setMessage("Patient Updated Successfully");
+		structure.setBody(patient);
+		return structure;	
+	}
+
+}
