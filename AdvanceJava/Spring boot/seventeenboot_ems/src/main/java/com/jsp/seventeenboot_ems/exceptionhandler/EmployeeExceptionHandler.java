@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.jsp.seventeenboot_ems.exceptionclasses.InvalidCredentialsException;
 import com.jsp.seventeenboot_ems.exceptionclasses.InvalidEmployeeIdException;
 import com.jsp.seventeenboot_ems.exceptionclasses.NoActiveEmployeeFoundException;
-import com.jsp.seventeenboot_ems.exceptionclasses.NoEmployeeFoundException;
+import com.jsp.seventeenboot_ems.exceptionclasses.NoEmployeeFoundByNameException;
 import com.jsp.seventeenboot_ems.responsestructure.ResponseStructure;
 
 @RestControllerAdvice
@@ -45,8 +45,8 @@ public class EmployeeExceptionHandler {
 		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(structure);
 	}
 	
-	@ExceptionHandler(NoEmployeeFoundException.class)
-	public ResponseEntity<ResponseStructure<String>> noEmployeeFoundExceptionHandler(NoEmployeeFoundException e){
+	@ExceptionHandler(NoEmployeeFoundByNameException.class)
+	public ResponseEntity<ResponseStructure<String>> noEmployeeFoundExceptionHandler(NoEmployeeFoundByNameException e){
 		ResponseStructure<String> structure = new ResponseStructure<>();
 		structure.setStatus(HttpStatus.NOT_FOUND.value());
 		structure.setMesg("No Employee Found ....");
@@ -58,7 +58,7 @@ public class EmployeeExceptionHandler {
 	public ResponseEntity<ResponseStructure<?>> sqlIntegrityConstraintViolationExceptionHandler(java.sql.SQLIntegrityConstraintViolationException e){
 		ResponseStructure<String> structure = new ResponseStructure<>();
 		structure.setStatus(HttpStatus.BAD_REQUEST.value());
-		structure.setMesg("Invalid Email or Phone Number....");
+		structure.setMesg("Given Email Already Present");
 		structure.setBody(e.getMessage());
 		return new ResponseEntity<ResponseStructure<?>>(structure,HttpStatus.BAD_REQUEST);
 	}

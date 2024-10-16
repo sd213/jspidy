@@ -113,7 +113,7 @@ public class PersonService {
 	}
 
 	public ResponseStructure<List<Person>> findUserByNameService(String name) {
-		// TODO Auto-generated method stub
+		
 		List<Person> pl = dao.findPersonByNameDao(name);
 		ResponseStructure<List<Person>> structure = new ResponseStructure<>();
 		if(pl.size()<1) {

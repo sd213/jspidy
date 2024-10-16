@@ -15,7 +15,7 @@ import com.jsp.seventeenboot_ems.entity.Employee;
 import com.jsp.seventeenboot_ems.exceptionclasses.InvalidCredentialsException;
 import com.jsp.seventeenboot_ems.exceptionclasses.InvalidEmployeeIdException;
 import com.jsp.seventeenboot_ems.exceptionclasses.NoActiveEmployeeFoundException;
-import com.jsp.seventeenboot_ems.exceptionclasses.NoEmployeeFoundException;
+import com.jsp.seventeenboot_ems.exceptionclasses.NoEmployeeFoundByNameException;
 import com.jsp.seventeenboot_ems.responsestructure.ResponseStructure;
 import com.jsp.seventeenboot_ems.util.EmployeeStatus;
 
@@ -136,7 +136,7 @@ public class EmployeeService {
 //			structure.setBody(employees);
 //			return structure;
 //			throw new NoEmployeeFoundException("No Matched Employee Found Exception");
-			throw NoEmployeeFoundException.builder().message("No Matched Employee Found Exception").build();
+			throw NoEmployeeFoundByNameException.builder().message("No Matched Employee Found Exception").build();
 		}
 		structure.setStatus(HttpStatus.OK.value());
 		structure.setMesg("List of Employee Found Successfully....");
@@ -156,7 +156,7 @@ public class EmployeeService {
 //			structure.setMesg("Invalid Employee Id.... Unable to Make ACTIVE ");
 //			structure.setBody(null);
 //			return structure;
-			throw NoEmployeeFoundException.builder().message("Invalid Employee Id Found....").build();
+			throw NoEmployeeFoundByNameException.builder().message("Invalid Employee Id Found....").build();
 		}
 		Employee employee = optional.get();
 		employee.setStatus(EmployeeStatus.ACTIVE);
@@ -178,7 +178,7 @@ public class EmployeeService {
 //			structure.setMesg("Invalid Employee Id.... Unable to Make ACTIVE ");
 //			structure.setBody(null);
 //			return structure;
-			throw NoEmployeeFoundException.builder().message("Invalid Employee Id Found....").build();
+			throw NoEmployeeFoundByNameException.builder().message("Invalid Employee Id Found....").build();
 		}
 		Employee employee = optional.get();
 		employee.setStatus(EmployeeStatus.IN_ACTIVE);
